@@ -1,14 +1,14 @@
-function isomorphicStrings(str1, str2) {
+function isomorphicStrings (str1, str2) {
   if (str1.length !== str2.length) {
     return 'the string entered is not isomorphic.'
   }
 
-  let map = new Map()
-  let set = new Set()
+  const map = new Map()
+  const set = new Set()
 
   for (let i = 0; i < str1.length; i++) {
-    let char1 = str1.charAt(i)
-    let char2 = str2.charAt(i)
+    const char1 = str1.charAt(i)
+    const char2 = str2.charAt(i)
 
     if (map.has(char1)) {
       if (map.get(char1) !== char2) {
@@ -27,8 +27,10 @@ function isomorphicStrings(str1, str2) {
 }
 
 function checkIsomorphic () {
-  let input1 = document.getElementById('string1').value
-  let input2 = document.getElementById('string2').value
-  let result = isomorphicStrings(input1, input2)
-  document.getElementById('result').innerText = "" + result
+  const input1 = document.getElementById('string1').value
+  const input2 = document.getElementById('string2').value
+  const result = isomorphicStrings(input1, input2)
+  document.getElementById('result').innerText = '' + result
 }
+
+checkIsomorphic()
